@@ -15,16 +15,22 @@
         <h1>
             <%= name %>
         </h1>
-        <ul>
+        <div>
             <% menuItems.forEach((item)=> { %>
-                <li>
-                    <%= item.name %>: $<%= item.price %>, Rating: <%= item.rating %>/5
-                </li>
-                <li>
-                    <%= item.details %>
-                </li>
-                <% }) %>
-        </ul>
+                <h2>
+                    <%= item.name %>
+                        <% if (item.rating===5) {%>
+                            ⭐
+                            <% } %>:
+                </h2>
+                <h3>
+                    $<%= item.price %>, Rating: <%= item.rating %>/5
+                            <h3>
+                                <p>
+                                    <%= item.details %>
+                                </p>
+                                <% }) %>
+        </div>
 </body>
 
 </html>
