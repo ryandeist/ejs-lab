@@ -60,4 +60,13 @@ app.get('/menu', (req, res) => {
   });
 });
 
+app.get('/menu/:category', (req, res) => {
+  res.render ('category.ejs', {
+    name: req.params.category.charAt(0).toUpperCase() + req.params.category.slice(1),
+    menuItems: RESTAURANT.menu.filter((item) => (item.category === req.params.category))
+  });
+});
+
+
+
 app.listen(3000);
